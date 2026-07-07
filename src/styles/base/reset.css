@@ -1,0 +1,168 @@
+/* ==========================================================================
+   CSS RESET (MODERN & MINIMAL)
+   --------------------------------------------------------------------------
+   Normaliza los estilos iniciales del navegador para crear una base
+   consistente en todos los proyectos.
+
+   Objetivos:
+   - Eliminar inconsistencias entre navegadores.
+   - Simplificar el cálculo de tamaños.
+   - Mejorar el comportamiento responsive.
+   - Establecer una base limpia para el sistema de diseño.
+
+   Nota:
+   Este archivo debe cargarse antes de cualquier estilo global o componente.
+   ========================================================================== */
+
+/* ==========================================================================
+   BOX SIZING & SPACING RESET
+   --------------------------------------------------------------------------
+   Aplica el modelo border-box a todos los elementos.
+
+   Beneficios:
+   - El padding y border se incluyen dentro del ancho declarado.
+   - Facilita la creación de layouts responsivos.
+   - Evita cálculos inesperados de dimensiones.
+
+   También elimina márgenes y paddings por defecto del navegador.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   HTML & BODY
+   --------------------------------------------------------------------------
+   Configuraciones globales del documento.
+
+   html:
+   - Activa desplazamiento suave al navegar mediante anclas.
+
+   body:
+   - Garantiza una altura mínima igual al viewport.
+   - Optimiza el renderizado inicial del texto.
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA
+   --------------------------------------------------------------------------
+   Previene que imágenes, videos y elementos gráficos excedan
+   el ancho de su contenedor.
+
+   Beneficios:
+   - Evita desbordamientos horizontales.
+   - Mejora el comportamiento responsive.
+   - Unifica el comportamiento visual de medios.
+   ========================================================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   FORM ELEMENTS
+   --------------------------------------------------------------------------
+   Hace que los controles de formulario hereden la tipografía
+   definida en el documento.
+
+   Beneficios:
+   - Consistencia visual.
+   - Menor necesidad de sobrescribir estilos.
+   - Mejor integración con el sistema de diseño.
+   ========================================================================== */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ==========================================================================
+   TEXT OVERFLOW PROTECTION
+   --------------------------------------------------------------------------
+   Permite dividir palabras extremadamente largas para evitar
+   desbordamientos de contenido.
+
+   Casos comunes:
+   - URLs extensas.
+   - Tokens.
+   - Hashes.
+   - Textos generados dinámicamente.
+   ========================================================================== */
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* ==========================================================================
+   LIST RESET
+   --------------------------------------------------------------------------
+   Elimina estilos visuales por defecto de listas.
+
+   Uso recomendado:
+   - Menús de navegación.
+   - Grillas de tarjetas.
+   - Componentes personalizados.
+
+   Si una lista necesita viñetas, deben definirse explícitamente.
+   ========================================================================== */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   LINK RESET
+   --------------------------------------------------------------------------
+   Elimina estilos visuales por defecto de los enlaces.
+
+   Comportamiento:
+   - Hereda el color del contexto.
+   - Elimina el subrayado automático.
+
+   Importante:
+   Los estados hover, focus y active deben definirse
+   posteriormente según el sistema de diseño.
+   ========================================================================== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Respeta la preferencia de usuarios sensibles al movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

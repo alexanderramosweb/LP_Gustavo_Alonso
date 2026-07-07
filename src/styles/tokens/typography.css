@@ -1,0 +1,98 @@
+/* ==========================================================================
+   DESIGN TOKENS: TYPOGRAPHY (FLUID & RESPONSIVE)
+   
+      Sistema tipográfico del proyecto.
+
+   Responsabilidades:
+   - Definir familias tipográficas.
+   - Establecer escala tipográfica responsiva.
+   - Mantener jerarquía visual consistente.
+   - Garantizar legibilidad en todos los dispositivos.
+
+   Principio clave:
+   Todos los valores deben consumirse vía variables CSS.
+   Nunca usar valores hardcodeados en componentes.
+
+
+   📝 GUÍA DE REFERENCIA RÁPIDA (Conversión base de 16px):
+   - fs-caption:   12px           (Textos legales, notas al pie)
+   - fs-small:     14px           (Fechas, etiquetas de tarjetas, datos técnicos)
+   - fs-body:      16px           (Texto de lectura de todos tus párrafos)
+   - fs-subtitle:  16px a 18px    (Subtítulos de secciones, introducciones)
+   - fs-h3:        18px a 20px    (Títulos de tarjetas de propiedades o bloques)
+   - fs-h2:        22px a 32px    (Títulos de secciones principales)
+   - fs-h1:        24px a 48px    (El título principal del Hero)
+   - fs-display:   40px a 64px    (Para destacar números grandes: "150m²", "20+ Años")
+   ========================================================================== */
+
+:root {
+  /* ==========================================================================
+     FONT FAMILIES
+     --------------------------------------------------------------------------
+     Tipografías base del sistema. cambiar segun el cliente solo
+     ========================================================================== */
+
+  --font-display: "Montserrat", system-ui, sans-serif;
+  /* Títulos principales (H1, H2, H3) */
+
+  --font-body: "Inter", system-ui, sans-serif;
+  /* Texto, UI, botones, párrafos */
+
+  /* ==========================================================================
+     FONT WEIGHTS (Grosores)
+     --------------------------------------------------------------------------
+     Escala de pesos tipográficos utilizada en todo el sistema.
+     ========================================================================== */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ==========================================================================
+     FONT SIZES (BASE)
+     --------------------------------------------------------------------------
+     Tamaños fijos base utilizados en elementos pequeños.
+     ========================================================================== */
+
+  --fs-caption: 0.75rem; /* 12px */
+  --fs-small: 0.875rem; /* 14px */
+  --fs-body: 1rem; /* 16px */
+
+  /* ==========================================================================
+     FONT SIZES (RESPONSIVE / FLUID)
+     --------------------------------------------------------------------------
+     Escala tipográfica adaptable al viewport.
+     Utiliza clamp() para interpolación automática.
+     ========================================================================== */
+
+  --fs-subtitle: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); /* 16px a 18px */
+  --fs-h3: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); /* 18px a 20px */
+  --fs-h2: clamp(1.375rem, 1rem + 1.5vw, 2rem); /* 22px a 32px */
+  --fs-h1: clamp(1.5rem, 0.9rem + 3vw, 3rem); /* 24px a 48px */
+
+  /* ==========================================================================
+     DISPLAY TYPOGRAPHY
+     --------------------------------------------------------------------------
+     Tipografía de alto impacto visual (hero, métricas, números grandes).
+     ========================================================================== */
+
+  --fs-display: clamp(2.5rem, 1.5rem + 4vw, 4rem);
+
+  /* ==========================================================================
+     LINE HEIGHTS (Interlineado para evitar que los textos se pisen)
+     --------------------------------------------------------------------------
+     Control de legibilidad y ritmo vertical del texto.
+     ========================================================================== */
+
+  --lh-tight: 1.1; /* Para el texto gigante (Display) */
+  --lh-heading: 1.2; /* Para todos tus títulos (H1, H2, H3) */
+  --lh-body: 1.6; /* Para los párrafos (da aire y descanso al leer) */
+
+  /* ------------------------------------------------------------------------
+     5. LETTER SPACING (Espaciado entre letras)
+     ------------------------------------------------------------------------ */
+  --ls-tight: -0.02em; /* Ideal para que los H1 grandes se vean más pro y compactos */
+  --ls-normal: 0;
+  --ls-wide: 0.02em; /* Súper elegante para subtítulos cortos en mayúsculas */
+}

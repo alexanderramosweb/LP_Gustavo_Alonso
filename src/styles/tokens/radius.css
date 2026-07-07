@@ -1,0 +1,105 @@
+/* ==========================================================================
+   DESIGN TOKENS: BORDER RADIUS
+   ==========================================================================
+
+   PROPÓSITO
+   --------------------------------------------------------------------------
+   Define la escala global de bordes redondeados utilizada en todo el proyecto.
+
+   Todas las esquinas de componentes deben consumir estas variables en lugar
+   de valores hardcodeados para mantener consistencia visual y facilitar
+   cambios futuros desde un único lugar.
+
+   EJEMPLOS DE USO
+   --------------------------------------------------------------------------
+   --radius-none  → Elementos sin redondeo.
+   --radius-sm    → Badges, tags, indicadores pequeños.
+   --radius-md    → Botones, inputs y controles interactivos.
+   --radius-lg    → Cards, imágenes y componentes de tamaño medio.
+   --radius-xl    → Modales, paneles y contenedores destacados.
+   --radius-full  → Avatares, chips y elementos completamente redondeados.
+
+   RECOMENDACIONES
+   --------------------------------------------------------------------------
+   ✓ Utilizar siempre estas variables.
+   ✓ Mantener la progresión de tamaño de menor a mayor.
+   ✓ Evitar valores personalizados salvo casos excepcionales.
+
+   EJEMPLO
+   --------------------------------------------------------------------------
+   .button {
+     border-radius: var(--radius-md);
+   }
+
+   .property-card {
+     border-radius: var(--radius-lg);
+   }
+
+   .avatar {
+     border-radius: var(--radius-full);
+   }
+   ========================================================================== */
+
+:root {
+  /* -----------------------------------------------------------------------
+     RADIUS NONE
+     -----------------------------------------------------------------------
+     Esquinas rectas sin redondeo.
+     Útil para estilos minimalistas, brutalistas o arquitectónicos.
+     ----------------------------------------------------------------------- */
+  --radius-none: 0;
+
+  /* -----------------------------------------------------------------------
+     RADIUS SMALL (4px)
+     -----------------------------------------------------------------------
+     Para componentes pequeños:
+     - Badges
+     - Tags
+     - Etiquetas de estado
+     - Indicadores
+     ----------------------------------------------------------------------- */
+  --radius-sm: 0.25rem;
+
+  /* -----------------------------------------------------------------------
+     RADIUS MEDIUM (8px)
+     -----------------------------------------------------------------------
+     Valor por defecto para elementos interactivos:
+     - Botones
+     - Inputs
+     - Selects
+     - Campos de formularios
+     ----------------------------------------------------------------------- */
+  --radius-md: 0.5rem;
+
+  /* -----------------------------------------------------------------------
+     RADIUS LARGE (12px)
+     -----------------------------------------------------------------------
+     Para componentes de tamaño medio:
+     - Tarjetas
+     - Imágenes
+     - Bloques de contenido
+     ----------------------------------------------------------------------- */
+  --radius-lg: 0.75rem;
+
+  /* -----------------------------------------------------------------------
+     RADIUS EXTRA LARGE (16px)
+     -----------------------------------------------------------------------
+     Para contenedores principales:
+     - Modales
+     - Panels
+     - Secciones destacadas
+     ----------------------------------------------------------------------- */
+  --radius-xl: 1rem;
+
+  /* -----------------------------------------------------------------------
+     RADIUS FULL
+     -----------------------------------------------------------------------
+     Genera formas completamente redondeadas.
+     Usar en:
+     - Avatares
+     - Botones circulares
+     - Chips
+     - Pills
+     ----------------------------------------------------------------------- */
+  --radius-full: 9999px;
+}

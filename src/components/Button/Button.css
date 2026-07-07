@@ -1,0 +1,132 @@
+/* ==========================================
+   BUTTON
+   Componente plantilla: combina layout, colores,
+   tipografía y comportamiento usando tus tokens.
+========================================== */
+
+/* ------------------------------------------
+   BASE
+   Estilos que aplican a TODAS las variantes
+------------------------------------------ */
+.button {
+  /* --- LAYOUT --- */
+  display: inline-flex; /* acomoda ícono + texto + ícono en fila */
+  align-items: center; /* centra verticalmente el contenido */
+  justify-content: center; /* centra horizontalmente el contenido */
+  gap: var(--space-2); /* espacio entre ícono y texto */
+
+  min-height: 3.25rem; /* alto mínimo del botón */
+  padding-inline: var(--space-8); /* espacio interno izquierda/derecha */
+
+  /* --- BORDES --- */
+  border: none; /* sin borde por defecto */
+  border-radius: var(--radius-full); /* forma "pill" (totalmente redondeado) */
+
+  /* --- TIPOGRAFÍA --- */
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  text-decoration: none; /* quita subrayado si el botón es un <a> */
+
+  /* --- COMPORTAMIENTO --- */
+  cursor: pointer; /* manita al pasar el mouse */
+  transition:
+    background-color 200ms ease,
+    /* color de fondo cambia suave */ transform 200ms ease; /* movimiento (hover) suave */
+}
+
+/* ------------------------------------------
+   VARIANTE: PRIMARY
+   Botón principal, fondo de color sólido
+------------------------------------------ */
+.button--primary {
+  /* --- COLOR --- */
+  color: var(--color-text-inv-title);
+  background-color: var(--color-bg-dark);
+}
+
+.button--primary:hover {
+  /* --- COMPORTAMIENTO (hover) --- */
+  color: var(--color-text-title);
+  background-color: var(--color-text-inv-title);
+  transform: translateY(-2px); /* se "levanta" un poco */
+}
+
+/* ------------------------------------------
+   VARIANTE: OUTLINE
+   Solo borde, fondo transparente
+------------------------------------------ */
+.button--outline {
+  /* --- COLOR --- */
+  color: var(--color-action-primary);
+  background-color: transparent;
+
+  /* --- BORDES --- */
+  border: 2px solid var(--color-bg-dark);
+}
+
+.button--outline:hover {
+  /* --- COMPORTAMIENTO (hover) --- */
+  background-color: var(--color-action-primary);
+  color: var(--color-background-dark);
+  transform: translateY(-2px);
+}
+
+/* ------------------------------------------
+   VARIANTE: GHOST
+   Sin fondo ni borde, solo texto con color
+------------------------------------------ */
+.button--ghost {
+  /* --- COLOR --- */
+  color: var(--color-action-primary);
+  background-color: transparent;
+  border: none;
+}
+
+.button--ghost:hover {
+  /* --- COMPORTAMIENTO (hover) --- */
+  background-color: var(--color-action-hover);
+  color: var(--color-background-dark);
+}
+
+/* ------------------------------------------
+   ESTADOS GLOBALES
+   Aplican a cualquier variante
+------------------------------------------ */
+
+/* Cuando el botón recibe foco con teclado (accesibilidad) */
+.button:focus-visible {
+  outline: 2px solid var(--color-action-primary);
+  outline-offset: 4px;
+}
+
+/* Cuando el botón está siendo presionado */
+.button:active {
+  transform: translateY(0); /* vuelve a su posición original */
+}
+
+/* ------------------------------------------
+   ÍCONOS
+   Controla el tamaño de cualquier SVG dentro del botón
+------------------------------------------ */
+.button svg {
+  width: 1.2em; /* escala junto con el tamaño de letra */
+  height: 1.2em;
+  flex-shrink: 0; /* evita que el ícono se achique */
+}
+
+/* ------------------------------------------
+   TEXTO
+   Maneja el caso de botón "solo ícono"
+------------------------------------------ */
+
+/* Si el span de texto está vacío... */
+.button:has(.button__text:empty) {
+  /* --- LAYOUT --- */
+  gap: 0; /* quita el espacio entre ícono y texto inexistente */
+}
+
+.button:has(.button__text:empty) .button__text {
+  /* --- LAYOUT --- */
+  display: none; /* oculta el span vacío */
+}

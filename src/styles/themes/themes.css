@@ -1,0 +1,32 @@
+/* ==========================================================================
+   THEMES
+   --------------------------------------------------------------------------
+   Variantes visuales globales basadas en la redefinición de tokens.
+
+   Beneficios:
+   - Permite cambiar la apariencia sin modificar componentes.
+   - Mantiene consistencia visual.
+   - Facilita la creación de modos y secciones especiales.
+
+   Uso:
+
+   <section class="theme-dark">
+     ...
+   </section>
+   ========================================================================== */
+
+/* ==========================================================================
+   DARK THEME
+   --------------------------------------------------------------------------
+   Variante para secciones con fondo oscuro.
+   ========================================================================== */
+
+.theme-dark {
+  background-color: var(--color-bg-dark);
+
+  --color-text-title: var(--color-text-inv-title);
+  --color-text-body: var(--color-text-inv-body);
+  --color-text-muted: #9e9485;
+
+  --color-border-main: #2d2a26;
+}

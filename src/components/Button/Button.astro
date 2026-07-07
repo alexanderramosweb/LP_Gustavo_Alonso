@@ -1,0 +1,39 @@
+---
+// Tipos de variante que tendrá el botón.
+// "primary" = tu estilo actual (fondo de color, pill)
+// "outline" = solo borde
+// "ghost"   = sin fondo
+
+import "./Button.css";
+
+interface Props {
+  variant?: "primary" | "outline" | "ghost";
+  href?: string; // si viene, el botón es un <a>
+  class?: string; // clases extra opcionales
+}
+
+const {
+  variant = "primary",
+  href,
+  class: className = "",
+  ...rest
+} = Astro.props;
+
+// Si hay "href" -> <a>, si no -> <button>
+const Tag = href ? "a" : "button";
+---
+
+<Tag
+  class:list={["button", `button--${variant}`, className]}
+  href={href}
+  {...rest}
+>
+  <!-- Ícono inicial (opcional) -->
+  <slot name="icon-left" />
+
+  <!-- Texto del botón -->
+  <span class="button__text"><slot /></span>
+
+  <!-- Ícono final (opcional) -->
+  <slot name="icon-right" />
+</Tag>

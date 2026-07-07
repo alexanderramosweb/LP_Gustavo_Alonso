@@ -1,0 +1,67 @@
+/* ==========================================================================
+   DESIGN TOKENS: CONTAINER
+   ==========================================================================
+
+   PROPÓSITO
+   --------------------------------------------------------------------------
+   Define las dimensiones base de los contenedores principales del proyecto.
+
+   Estas variables controlan el ancho máximo del contenido y el espacio
+   interno lateral utilizado para mantener una correcta legibilidad en
+   cualquier resolución.
+
+   Todas las secciones deben utilizar estos tokens en lugar de valores
+   hardcodeados para garantizar consistencia y facilitar ajustes globales.
+
+   EJEMPLOS DE USO
+   --------------------------------------------------------------------------
+   --container-width   → Ancho máximo del contenido.
+   --container-padding → Espaciado lateral interno.
+
+   RECOMENDACIONES
+   --------------------------------------------------------------------------
+   ✓ Utilizar el mismo ancho máximo en todas las páginas.
+   ✓ Mantener padding lateral incluso en pantallas pequeñas.
+   ✓ Modificar estos valores únicamente desde este archivo.
+
+   EJEMPLO
+   --------------------------------------------------------------------------
+   .container {
+     width: min(100%, var(--container-width));
+     margin-inline: auto;
+     padding-inline: var(--container-padding);
+   }
+   ========================================================================== */
+
+:root {
+  /* -----------------------------------------------------------------------
+     CONTAINER WIDTH
+     -----------------------------------------------------------------------
+     Define el ancho máximo que puede ocupar el contenido principal.
+
+     Objetivo:
+     - Evitar líneas excesivamente largas.
+     - Mejorar la legibilidad.
+     - Mantener una estructura visual consistente.
+
+     Uso recomendado:
+     - Layout principal.
+     - Secciones.
+     - Grids generales.
+     ----------------------------------------------------------------------- */
+  --container-width: 75rem; /* 1200px */
+
+  /* -----------------------------------------------------------------------
+     CONTAINER PADDING
+     -----------------------------------------------------------------------
+     Espaciado lateral interno del contenedor.
+
+     Evita que el contenido toque los bordes de la pantalla,
+     especialmente en dispositivos móviles.
+
+     Uso recomendado:
+     - Padding horizontal de containers.
+     - Márgenes de seguridad visual.
+     ----------------------------------------------------------------------- */
+  --container-padding: 1rem; /* 16px */
+}

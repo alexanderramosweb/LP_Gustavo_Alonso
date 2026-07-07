@@ -1,0 +1,169 @@
+/* ==========================================================================
+   BASE STYLES
+   --------------------------------------------------------------------------
+   Estilos base para elementos HTML nativos.
+
+   Objetivos:
+   - Conectar los elementos semánticos con el sistema de diseño.
+   - Aplicar tipografía, colores y comportamientos globales.
+   - Mantener una apariencia consistente sin depender de clases.
+   - Servir como capa base para todos los componentes.
+   ========================================================================== */
+
+/* ==========================================================================
+   DOCUMENT SETTINGS
+   --------------------------------------------------------------------------
+   Configuración global del documento.
+
+   html:
+   - Mantiene el tamaño base de fuente del navegador.
+   - Activa desplazamiento suave entre anclas.
+   ========================================================================== */
+
+html {
+  font-size: 100%;
+}
+
+/* ==========================================================================
+   BODY
+   --------------------------------------------------------------------------
+   Configuración global del contenido.
+
+   Conecta el documento con:
+   - Tokens de tipografía.
+   - Tokens de color.
+   - Configuraciones de renderizado de texto.
+
+   Variables requeridas:
+   --font-body
+   --fs-body
+   --lh-body
+   --color-text-paragraph
+   --color-bg-main
+   ========================================================================== */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+
+  color: var(--color-text-paragraph);
+  background-color: var(--color-bg-main);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* ==========================================================================
+   HEADINGS
+   --------------------------------------------------------------------------
+   Estilos base para títulos semánticos.
+
+   Características:
+   - Utilizan la tipografía display.
+   - Aplican color de título global.
+   - Mejoran la distribución de líneas mediante text-wrap.
+
+   Variables requeridas:
+   --font-display
+   --fw-bold
+   --color-text-title
+   ========================================================================== */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-title);
+
+  text-wrap: balance;
+}
+
+/* ==========================================================================
+   H1
+   --------------------------------------------------------------------------
+   Título principal de la página.
+
+   Uso recomendado:
+   - Una sola vez por página.
+   - Encabezado principal de la landing.
+   ========================================================================== */
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+/* ==========================================================================
+   H2
+   --------------------------------------------------------------------------
+   Títulos principales de sección.
+   ========================================================================== */
+
+h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+}
+
+/* ==========================================================================
+   H3
+   --------------------------------------------------------------------------
+   Títulos secundarios dentro de una sección.
+   ========================================================================== */
+
+h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading);
+}
+
+/* ==========================================================================
+   PARAGRAPHS
+   --------------------------------------------------------------------------
+   Mejora la distribución visual del texto evitando líneas
+   huérfanas al final de los párrafos.
+   ========================================================================== */
+
+p {
+  text-wrap: pretty;
+}
+
+/* ==========================================================================
+   BUTTON RESET
+   --------------------------------------------------------------------------
+   Elimina estilos nativos del navegador para permitir que los
+   componentes de botón se construyan desde cero.
+
+   Comportamiento:
+   - Hereda la tipografía del contexto.
+   - Elimina bordes y fondos nativos.
+   - Mantiene el cursor interactivo.
+   ========================================================================== */
+
+button {
+  font: inherit;
+  cursor: pointer;
+
+  border: none;
+  background: none;
+}
+
+/* ==========================================================================
+   IMAGES
+   --------------------------------------------------------------------------
+   Configuración base para imágenes responsive.
+
+   Beneficios:
+   - Evita desbordamientos horizontales.
+   - Mantiene la proporción original.
+   - Elimina espacios visuales generados por elementos inline.
+   ========================================================================== */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

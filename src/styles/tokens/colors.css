@@ -1,0 +1,75 @@
+/* ==========================================================================
+   COLOR TOKENS
+   --------------------------------------------------------------------------
+   Sistema semántico de colores utilizado por toda la aplicación.
+
+   Principios:
+   - Nunca utilizar valores HEX directamente en componentes.
+   - Consumir siempre variables CSS.
+   - Los nombres describen propósito, no apariencia.
+   - Facilita la creación de temas y variantes visuales.
+
+   Ejemplo:
+   ✔ var(--color-text-title)
+   ✘ #181a1b
+   ========================================================================== */
+
+:root {
+  /* ==========================================================================
+     BACKGROUNDS
+     --------------------------------------------------------------------------
+     Colores utilizados para fondos y superficies.
+     ========================================================================== */
+
+  --color-bg-main: #f4f1ea;
+  --color-bg-surface: #ffffff;
+  --color-bg-dark: #181a1b;
+  --color-bg-muted: #fcfbfa;
+
+  /* ==========================================================================
+     TEXT
+     --------------------------------------------------------------------------
+     Colores tipográficos para contenido y jerarquía visual.
+     ========================================================================== */
+
+  --color-text-title: #181a1b;
+  --color-text-body: #2d2a26;
+  --color-text-muted: #7a7267;
+
+  /* ==========================================================================
+     INVERSE TEXT
+     --------------------------------------------------------------------------
+     Colores utilizados sobre fondos oscuros.
+     ========================================================================== */
+
+  --color-text-inv-title: #ffffff;
+  --color-text-inv-body: #e3dfd5;
+
+  /* ==========================================================================
+     BRAND
+     --------------------------------------------------------------------------
+     Colores asociados a la identidad visual y acciones principales.
+     ========================================================================== */
+
+  --color-brand-primary: #a89276;
+  --color-brand-hover: #8c7e6e;
+  --color-brand-secondary: #2d2a26;
+
+  /* ==========================================================================
+     BORDERS
+     --------------------------------------------------------------------------
+     Colores utilizados para separación visual y estados de formularios.
+     ========================================================================== */
+
+  --color-border-main: #e3dfd5;
+  --color-border-input: #a89276;
+
+  /* ==========================================================================
+     STATUS
+     --------------------------------------------------------------------------
+     Colores utilizados para feedback visual y validaciones.
+     ========================================================================== */
+
+  --color-status-success: #2e7d32;
+  --color-status-error: #c62828;
+}

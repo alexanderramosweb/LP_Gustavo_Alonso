@@ -1,0 +1,88 @@
+/* ==========================================================================
+   DESIGN TOKENS INDEX
+   --------------------------------------------------------------------------
+   Punto de entrada de todos los tokens del sistema de diseño.
+
+   Responsabilidades:
+   - Centralizar la carga de variables CSS globales.
+   - Mantener un único punto de importación para el proyecto.
+   - Garantizar que todos los tokens estén disponibles antes de
+     cargar estilos base, layouts o componentes.
+
+   Importante:
+   Los archivos importados aquí únicamente deben contener tokens
+   (variables CSS) y no reglas visuales o selectores HTML.
+   ========================================================================== */
+
+/* ==========================================================================
+   COLORS
+   --------------------------------------------------------------------------
+   Define la paleta de colores del sistema.
+
+   Incluye:
+   - Colores primarios
+   - Colores secundarios
+   - Colores neutros
+   - Colores de texto
+   - Colores de fondo
+   - Colores de estado
+   ========================================================================== */
+
+@import "./colors.css";
+
+/* ==========================================================================
+   SPACING
+   --------------------------------------------------------------------------
+   Define la escala de espaciado utilizada en layouts,
+   componentes y utilidades.
+
+   Incluye:
+   - Margins
+   - Paddings
+   - Gaps
+   - Separaciones verticales
+   ========================================================================== */
+
+@import "./spacing.css";
+
+/* ==========================================================================
+   TYPOGRAPHY
+   --------------------------------------------------------------------------
+   Define el sistema tipográfico global.
+
+   Incluye:
+   - Familias tipográficas
+   - Tamaños de fuente
+   - Alturas de línea
+   - Pesos tipográficos
+   - Espaciado entre letras
+   ========================================================================== */
+
+@import "./typography.css";
+
+/* ==========================================================================
+   BORDER RADIUS
+   --------------------------------------------------------------------------
+   Define los radios de borde utilizados en componentes.
+
+   Incluye:
+   - Botones
+   - Tarjetas
+   - Inputs
+   - Modales
+   ========================================================================== */
+
+@import "./radius.css";
+
+/* ==========================================================================
+   CONTAINER
+   --------------------------------------------------------------------------
+   Define las dimensiones estructurales del layout.
+
+   Incluye:
+   - Ancho máximo del contenido
+   - Padding lateral global
+   - Configuración de contenedores responsivos
+   ========================================================================== */
+
+@import "./container.css";

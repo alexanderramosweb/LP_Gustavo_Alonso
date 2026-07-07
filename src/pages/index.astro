@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Buena práctica: Si creas tu footer como un componente separado, lo importas aquí
+// import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <header>
+    <nav>Menú de Aura Marina</nav>
+  </header>
+
+  <main></main>
+
+  <footer>
+    <p>&copy; 2026 Aura Marina. Todos los derechos reservados.</p>
+  </footer>
+</BaseLayout>
