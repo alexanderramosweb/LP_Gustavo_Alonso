@@ -76,7 +76,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: var(--fw-bold);
+
   color: var(--color-text-title);
 
   text-wrap: balance;
@@ -93,8 +93,9 @@ h3 {
    ========================================================================== */
 
 h1 {
+  font-weight: var(--fw-bold);
   font-size: var(--fs-h1);
-  line-height: var(--lh-tight);
+  line-height: var(--lh-h1); /* Conectado a tu nuevo token 1.1 */
   letter-spacing: var(--ls-tight);
 }
 
@@ -105,8 +106,9 @@ h1 {
    ========================================================================== */
 
 h2 {
+  font-weight: var(--fw-regular); /* Ajustado a regular como pediste */
   font-size: var(--fs-h2);
-  line-height: var(--lh-heading);
+  line-height: var(--lh-h2);
 }
 
 /* ==========================================================================
@@ -116,8 +118,9 @@ h2 {
    ========================================================================== */
 
 h3 {
+  font-weight: var(--fw-regular); /* Ajustado a regular como pediste */
   font-size: var(--fs-h3);
-  line-height: var(--lh-heading);
+  line-height: var(--lh-h3); /* Conectado a tu nuevo token 1.3 */
 }
 
 /* ==========================================================================

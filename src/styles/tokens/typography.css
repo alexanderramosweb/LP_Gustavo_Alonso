@@ -32,10 +32,10 @@
      Tipografías base del sistema. cambiar segun el cliente solo
      ========================================================================== */
 
-  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-display: "EB Garamond", serif;
   /* Títulos principales (H1, H2, H3) */
 
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
   /* Texto, UI, botones, párrafos */
 
   /* ==========================================================================
@@ -45,7 +45,6 @@
      ========================================================================== */
 
   --fw-regular: 400;
-  --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
 
@@ -58,6 +57,7 @@
   --fs-caption: 0.75rem; /* 12px */
   --fs-small: 0.875rem; /* 14px */
   --fs-body: 1rem; /* 16px */
+  --fs-subtitle: 1.125rem; /* 18px regular */
 
   /* ==========================================================================
      FONT SIZES (RESPONSIVE / FLUID)
@@ -66,18 +66,22 @@
      Utiliza clamp() para interpolación automática.
      ========================================================================== */
 
-  --fs-subtitle: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); /* 16px a 18px */
-  --fs-h3: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); /* 18px a 20px */
-  --fs-h2: clamp(1.375rem, 1rem + 1.5vw, 2rem); /* 22px a 32px */
-  --fs-h1: clamp(1.5rem, 0.9rem + 3vw, 3rem); /* 24px a 48px */
+  /* H3: Móvil 18px (1.125rem) -> Tablet 20px (1.25rem) -> Desktop 32px (2rem) */
+  --fs-h3: clamp(1.125rem, 0.8rem + 1.25vw, 2rem);
+
+  /* H2: Móvil 24px (1.5rem) -> Tablet 28px (1.75rem) -> Desktop 36px (2.25rem) */
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.1vw, 2.25rem);
+
+  /* H1: Móvil 28px (1.75rem) -> Tablet 40px (2.5rem) -> Desktop 56px (3.5rem) */
+  --fs-h1: clamp(1.75rem, 1.05rem + 2.9vw, 3.5rem);
 
   /* ==========================================================================
      DISPLAY TYPOGRAPHY
      --------------------------------------------------------------------------
-     Tipografía de alto impacto visual (hero, métricas, números grandes).
+     Tipografía de alto impacto visual (hero, métricas, números grandes). 
      ========================================================================== */
 
-  --fs-display: clamp(2.5rem, 1.5rem + 4vw, 4rem);
+  --fs-display: clamp(3.5rem, 1.5rem + 4vw, 4rem);
 
   /* ==========================================================================
      LINE HEIGHTS (Interlineado para evitar que los textos se pisen)
@@ -85,9 +89,10 @@
      Control de legibilidad y ritmo vertical del texto.
      ========================================================================== */
 
-  --lh-tight: 1.1; /* Para el texto gigante (Display) */
-  --lh-heading: 1.2; /* Para todos tus títulos (H1, H2, H3) */
-  --lh-body: 1.6; /* Para los párrafos (da aire y descanso al leer) */
+  --lh-h1: 1.1; /* Ajustado para títulos grandes (56px * 1.1 ≈ 61px) */
+  --lh-h2: 1.25; /* Un poco más de aire para títulos medianos */
+  --lh-h3: 1.3; /* Ritmo equilibrado para títulos pequeños */
+  --lh-body: 1.5; /* El estándar de oro para lectura en párrafos (16px * 1.5 = 24px) */
 
   /* ------------------------------------------------------------------------
      5. LETTER SPACING (Espaciado entre letras)
