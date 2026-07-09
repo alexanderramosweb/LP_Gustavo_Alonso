@@ -21,10 +21,9 @@
      Colores utilizados para fondos y superficies.
      ========================================================================== */
 
-  --color-bg-main: #f4f1ea;
-  --color-bg-surface: #ffffff;
+  --color-bg-main: #fbf9f4;
+  --color-bg-surface: #F0EEE9;
   --color-bg-dark: #181a1b;
-  --color-bg-muted: #fcfbfa;
 
   /* ==========================================================================
      TEXT
@@ -32,9 +31,8 @@
      Colores tipográficos para contenido y jerarquía visual.
      ========================================================================== */
 
-  --color-text-title: #181a1b;
-  --color-text-body: #2d2a26;
-  --color-text-muted: #7a7267;
+  --color-text-title: #1b1c19;
+  --color-text-body: #545f72;
 
   /* ==========================================================================
      INVERSE TEXT
@@ -43,7 +41,8 @@
      ========================================================================== */
 
   --color-text-inv-title: #ffffff;
-  --color-text-inv-body: #e3dfd5;
+  --color-text-inv-body: #e5e2e1;
+  --color-text-accent: #9e7f47;
 
   /* ==========================================================================
      BRAND

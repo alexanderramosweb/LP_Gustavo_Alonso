@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header/Header.astro";
 
 // Buena práctica: Si creas tu footer como un componente separado, lo importas aquí
 // import Footer from "../components/Footer.astro";
@@ -13,13 +14,11 @@ const { title, description } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <header>
-    <nav>Gustavo Alonso</nav>
-  </header>
+  <Header>
+    <main></main>
 
-  <main></main>
-
-  <footer>
-    <p>&copy; 2026 Gustavo Alonso. Todos los derechos reservados.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2026 Gustavo Alonso. Todos los derechos reservados.</p>
+    </footer>
+  </Header>
 </BaseLayout>

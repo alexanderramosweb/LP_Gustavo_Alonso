@@ -1,0 +1,132 @@
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+/*
+ * Componente:
+ * Header
+ *
+ * Responsabilidades:
+ * - Distribuir el logo y la navegación.
+ * - Definir el espaciado del encabezado.
+ * - No define colores ni tipografías; consume el Design System.
+ */
+
+.header {
+  /* Color de fondo (Design System) */
+  background-color: var(--color-bg-surface);
+
+  /* Separación vertical */
+  padding-block: var( --space-4);
+}
+
+/* ==========================================================
+   CONTENIDO
+   ========================================================== */
+
+/*
+ * El componente Container se encarga del ancho máximo.
+ *
+ * Aquí únicamente distribuimos los elementos internos.
+ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+.header__logo-icon {
+  inline-size: 2rem;
+  block-size: 2rem;
+
+  flex-shrink: 0;
+}
+
+.header__logo-text {
+  /* Tipografía del Design System */
+  font-family: var(--font-family-heading);
+
+  font-size: var(--fs-body);
+
+  font-weight: var( --fw-regular);
+
+  line-height: var( --lh-body);
+
+  color: var(--color-text-body);
+}
+
+/* ==========================================================
+   NAVEGACIÓN
+   ========================================================== */
+
+.header__menu {
+  display: flex;
+  align-items: center;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.header__item {
+  display: flex;
+}
+
+/* ==========================================================
+   ENLACE
+   ========================================================== */
+
+.header__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-200);
+
+  text-decoration: none;
+
+  color: var(--color-text-primary);
+
+  font-family: var(--font-family-body);
+
+  font-size: var(--fs-body-md);
+
+  font-weight: var(--fw-medium);
+
+  line-height: var(--lh-body);
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.header__link:hover {
+  color: var(--color-primary);
+}
+
+.header__link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.header__icon {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+
+  flex-shrink: 0;
+}
