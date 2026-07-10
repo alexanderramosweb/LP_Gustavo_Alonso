@@ -1,35 +1,55 @@
 ---
+import { Image } from "astro:assets";
 import Container from "../Container/Container.astro";
+import iconBrand from "../../assets/icons/icon_brand.svg";
+import iconWhatsapp from "../../assets/icons/icon_brand-whatsapp.svg";
+import "./Header.css";
 
 /*
- * Header del sitio.
- *
- * Responsabilidades:
- * - Mostrar la identidad del sitio.
- * - Contener la navegación principal.
- *
- * Nota:
- * El componente Container se encarga de limitar el ancho
- * máximo y centrar el contenido.
+ * Header del sitio optimizado para IA y Accesibilidad.
  */
 ---
 
-<header class="header">
+<header
+  class="header"
+  role="banner"
+  itemscope
+  itemtype="https://schema.org/WPHeader"
+>
   <Container>
     <div class="header__content">
-      <!-- ==========================================================
-           Logo
-           ========================================================== -->
-      <a href="/" class="header__brand" aria-label="Ir a la página de inicio">
-        <span class="header__logo" aria-hidden="true"></span>
+      <!-- Identidad de Marca con Microdatos (Schema) -->
+      <div
+        itemscope
+        itemtype="https://schema.org/Person"
+        class="header__identity"
+      >
+        <a
+          href="/"
+          class="header__brand"
+          rel="home"
+          itemprop="url"
+          aria-label="Ir a la página de inicio de Sergio Mendoza"
+        >
+          <Image
+            src={iconBrand}
+            alt="Logotipo de Sergio Mendoza"
+            class="header__icon-img"
+            width={16}
+            height={16}
+            loading="eager"
+          />
+          <span class="header__brand-name" itemprop="name">SERGIO MENDOZA</span>
+        </a>
+      </div>
 
-        <span class="header__brand-name"> SERGIO MENDOZA </span>
-      </a>
-
-      <!-- ==========================================================
-           Navegación principal
-           ========================================================== -->
-      <nav class="header__nav" aria-label="Navegación principal">
+      <!-- Navegación y Canales de Contacto Directo -->
+      <nav
+        class="header__nav"
+        aria-label="Navegación principal del sitio"
+        itemscope
+        itemtype="https://schema.org/SiteNavigationElement"
+      >
         <ul class="header__menu">
           <li class="header__item">
             <a
@@ -37,11 +57,18 @@ import Container from "../Container/Container.astro";
               class="header__link"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Contactar por WhatsApp"
+              itemprop="sameAs"
+              aria-label="Contactar a Sergio Mendoza por WhatsApp (abre en una nueva ventana)"
             >
-              <span class="header__icon" aria-hidden="true"></span>
-
-              <span class="header__link-text"> WhatsApp </span>
+              <Image
+                src={iconWhatsapp}
+                alt=""
+                class="header__icon-img"
+                width={24}
+                height={24}
+                aria-hidden="true"
+              />
+              <span class="header__link-text">whatsapp</span>
             </a>
           </li>
         </ul>
