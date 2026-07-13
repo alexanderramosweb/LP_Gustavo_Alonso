@@ -1,0 +1,72 @@
+---
+import Container from "../../components/Container/Container.astro";
+
+import Button from "../../components/Button/Button.astro";
+
+import heroDesktopAvif from "../../assets/images/hero/heroDesktop.avif";
+import heroDesktopWebp from "../../assets/images/hero/heroDesktop.webp";
+
+import heroMobileAvif from "../../assets/images/hero/heroMobile.avif";
+import heroMobileWebp from "../../assets/images/hero/heroMobile.webp";
+
+import "./Hero.css";
+---
+
+<section id="hero" class="hero" aria-labelledby="hero-title">
+  <div class="hero__media" aria-hidden="true">
+    <picture>
+      <source
+        media="(max-width: 768px)"
+        srcset={heroMobileAvif.src}
+        type="image/avif"
+      />
+
+      <source
+        media="(max-width: 768px)"
+        srcset={heroMobileWebp.src}
+        type="image/webp"
+      />
+
+      <source
+        media="(min-width: 769px)"
+        srcset={heroDesktopAvif.src}
+        type="image/avif"
+      />
+
+      <source
+        media="(min-width: 769px)"
+        srcset={heroDesktopWebp.src}
+        type="image/webp"
+      />
+
+      <img
+        src={heroDesktopWebp.src}
+        alt=""
+        width={heroDesktopWebp.width}
+        height={heroDesktopWebp.height}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+  </div>
+
+  <div class="hero__overlay" aria-hidden="true"></div>
+
+  <Container>
+    <header class="hero__heading">
+      <h1 id="hero-title" class="hero__title">
+        Arquitectura moderna para quienes valoran cada detalle
+      </h1>
+
+      <p class="hero__subtitle">
+        Convertimos tus ideas en espacios modernos, funcionales y atemporales,
+        pensados para reflejar tu estilo de vida y crecer contigo.
+      </p>
+    </header>
+
+    <div class="hero__cta">
+      <Button href="#contact"> CONTACTAR POR WHATSAPP </Button>
+    </div>
+  </Container>
+</section>
