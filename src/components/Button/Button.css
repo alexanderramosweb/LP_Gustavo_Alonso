@@ -20,7 +20,7 @@
 
   /* --- BORDES --- */
   border: none; /* sin borde por defecto */
-  border-radius: var(--radius-full); /* forma "pill" (totalmente redondeado) */
+  border-radius: var(--radius-none); /* forma "pill" (totalmente redondeado) */
 
   /* --- TIPOGRAFÍA --- */
   font-family: var(--font-body);
@@ -41,8 +41,8 @@
 ------------------------------------------ */
 .button--primary {
   /* --- COLOR --- */
-  color: var(--color-text-inv-title);
-  background-color: var(--color-bg-dark);
+  color: var(--color-text-title);
+  background-color: var(--color-bg-surface);
 }
 
 .button--primary:hover {

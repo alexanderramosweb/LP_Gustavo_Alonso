@@ -1,16 +1,22 @@
 ---
 // Tipos de variante que tendrá el botón.
-// "primary" = tu estilo actual (fondo de color, pill)
+// "primary" = fondo de color
 // "outline" = solo borde
 // "ghost"   = sin fondo
 
+import type { HTMLAttributes } from "astro/types";
 import "./Button.css";
 
-interface Props {
+// Definimos las propiedades personalizadas de nuestro botón
+interface BaseProps {
   variant?: "primary" | "outline" | "ghost";
-  href?: string; // si viene, el botón es un <a>
   class?: string; // clases extra opcionales
 }
+
+// Combinamos las propiedades base con los atributos nativos de <a> o de <button>
+type Props =
+  | (BaseProps & HTMLAttributes<"a"> & { href: string }) // Si tiene href, hereda de <a>
+  | (BaseProps & HTMLAttributes<"button"> & { href?: never }); // Si no, hereda de <button> y prohíbe el href
 
 const {
   variant = "primary",
@@ -23,10 +29,14 @@ const {
 const Tag = href ? "a" : "button";
 ---
 
+<!-- 
+  Hacemos un cast manual con "as any" en el renderizado para que Astro no se queje
+  al mezclar los atributos del tag dinámico.
+-->
 <Tag
   class:list={["button", `button--${variant}`, className]}
   href={href}
-  {...rest}
+  {...rest as any}
 >
   <!-- Ícono inicial (opcional) -->
   <slot name="icon-left" />

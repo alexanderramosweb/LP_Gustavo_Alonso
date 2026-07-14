@@ -9,6 +9,8 @@ import heroDesktopWebp from "../../assets/images/hero/heroDesktop.webp";
 import heroMobileAvif from "../../assets/images/hero/heroMobile.avif";
 import heroMobileWebp from "../../assets/images/hero/heroMobile.webp";
 
+import WhatsAppIcon from "../../assets/icons/icon_brand-whatsapp.svg";
+
 import "./Hero.css";
 ---
 
@@ -66,7 +68,9 @@ import "./Hero.css";
     </header>
 
     <div class="hero__cta">
-      <Button href="#contact"> CONTACTAR POR WHATSAPP </Button>
+      <Button variant="primary" href="https://wa.me/573000000000">
+        <WhatsAppIcon slot="icon-left" /> CONTACTAR POR WHATSAPP
+      </Button>
     </div>
   </Container>
 </section>
