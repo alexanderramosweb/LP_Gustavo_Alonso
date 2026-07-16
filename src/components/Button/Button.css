@@ -43,13 +43,18 @@
   /* --- COLOR --- */
   color: var(--color-text-title);
   background-color: var(--color-bg-surface);
+  border: 1px solid transparent;
 }
 
 .button--primary:hover {
   /* --- COMPORTAMIENTO (hover) --- */
-  color: var(--color-text-title);
-  background-color: var(--color-text-inv-title);
+  color: var(--color-text-inv-title);
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transform: translateY(-2px); /* se "levanta" un poco */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ------------------------------------------

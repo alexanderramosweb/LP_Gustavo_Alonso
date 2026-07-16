@@ -9,6 +9,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   overflow: hidden;
 }
@@ -64,19 +65,25 @@
 }
 
 /* ==========================================
+   HERO CONTENT WRAPPER
+========================================== */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-inline: auto; /* Centra el bloque dentro del Container */
+  z-index: 1;
+}
+
+/* ==========================================
    HERO HEADING
 ========================================== */
 
 .hero__heading {
-  position: relative;
-  z-index: 1;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  justify-content: center;
-
   text-align: center;
   gap: var(--space-6);
 }
@@ -122,11 +129,7 @@
 .hero__cta {
   display: flex;
   flex-direction: column;
-
   align-items: center;
-  justify-content: center;
-
-  text-align: center;
   margin-top: var(--space-8);
 }
 
@@ -141,10 +144,34 @@
 }
 
 /* ==========================================
+   HERO RESPONSIVE: Solo para Tablets (Entre 769px y 1024px)
+   Aísla este diseño para que NO afecte a los móviles.
+========================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+    align-items: center; /* Centra el contenido verticalmente en la mitad */
+    padding-bottom: 0;
+  }
+
+  .hero__content {
+    max-width: 40rem; /* Le damos más ancho para que el botón NO se rompa en 2 líneas */
+    width: 100%;
+  }
+
+  .hero .hero__overlay {
+    /* Un degradado intermedio que protege el texto centrado */
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.4) 0%,
+      rgba(10, 10, 10, 0.75) 100%
+    );
+  }
+}
+/* ==========================================
    HERO RESPONSIVE
    Mobile ≤ 768px
 ========================================== */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero {
     min-height: 100dvh;
     align-items: flex-end;
