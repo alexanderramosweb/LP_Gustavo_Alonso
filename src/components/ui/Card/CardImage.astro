@@ -1,0 +1,37 @@
+---
+import "./CardImage.css";
+
+import type { ImageSource } from "../../../types/image";
+
+interface Props {
+  image: ImageSource;
+
+  loading?: "lazy" | "eager";
+
+  decoding?: "async" | "sync" | "auto";
+
+  fetchPriority?: "high" | "low" | "auto";
+
+  objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
+
+  aspectRatio?: string;
+
+  class?: string;
+}
+
+const {
+  image,
+
+  loading = "lazy",
+
+  decoding = "async",
+
+  fetchPriority = "auto",
+
+  objectFit = "cover",
+
+  aspectRatio,
+
+  class: className = "",
+} = Astro.props;
+---
