@@ -4,6 +4,12 @@ import Card from "../../components/ui/Card/Card.astro";
 import CardImage from "../../components/ui/Card/CardImage.astro";
 import CardContent from "../../components/ui/Card/CardContent.astro";
 
+import casapeninsulaAvif from "../../assets/images/portfolio/casa-peninsula.avif";
+import casapeninsulaWebp from "../../assets/images/portfolio/casa-peninsula.webp";
+
+import edificioprismaAvif from "../../assets/images/portfolio/edificio-prisma.avif";
+import edificioprismaWebp from "../../assets/images/portfolio/edificio-prisma.webp";
+
 import villaAvif from "../../assets/images/portfolio/villa-marina.avif";
 import villaWebp from "../../assets/images/portfolio/villa-marina.webp";
 
@@ -24,6 +30,38 @@ import "./portfolio.css";
         <Card>
           <CardImage
             image={{
+              avif: casapeninsulaAvif,
+              webp: casapeninsulaWebp,
+            }}
+            alt="Villa Marina frente al mar"
+          />
+
+          <CardContent>
+            <h3>Casa Península</h3>
+
+            <p>Residencial • 2023</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardImage
+            image={{
+              avif: edificioprismaAvif,
+              webp: edificioprismaWebp,
+            }}
+            alt="Villa Marina frente al mar"
+          />
+
+          <CardContent>
+            <h3>Edificio Prisma</h3>
+
+            <p>Comercial • 2022</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardImage
+            image={{
               avif: villaAvif,
               webp: villaWebp,
             }}
@@ -31,13 +69,9 @@ import "./portfolio.css";
           />
 
           <CardContent>
-            <h3>Villa Marina</h3>
+            <h3>Villa Atemporal</h3>
 
-            <p>Diseño residencial moderno con vistas al océano.</p>
-
-            <div>Arquitectura</div>
-
-            <a href="#"> Ver proyecto </a>
+            <p>Residencial • 2024</p>
           </CardContent>
         </Card>
       </div>

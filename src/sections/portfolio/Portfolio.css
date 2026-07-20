@@ -1,0 +1,45 @@
+/* ==========================================
+  PORTFOLIO SECTION
+========================================== */
+
+.portfolio {
+  padding-block: var(--space-20);
+  background-color: var(--color-border-light);
+}
+
+/* ==========================================
+   PORTFOLIO HEADING
+========================================== */
+
+.portfolio__heading {
+  gap: var(--space-4);
+}
+.portfolio__title {
+  font-family: var(--font-display);
+
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-regular);
+
+  line-height: var(--lh-h1);
+
+  color: var(--color-text-title);
+}
+
+.hero__subtitle {
+  font-family: var(--font-display);
+
+  font-size: var(--fs-subtitle);
+  font-weight: var(--fw-regular);
+
+  line-height: var(--lh-h3);
+
+  color: var(--color-text-accent);
+}
+/* ==========================================
+   PORTFOLIO LAYOUT
+========================================== */
+.portfolio__layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
