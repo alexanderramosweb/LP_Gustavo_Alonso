@@ -1,7 +1,13 @@
 ---
 import Container from "../../components/Container/Container.astro";
-import PortfolioCard from './portfolioCards/PortfolioCard.astro';
-import "./Hero.css";
+import Card from "../../components/ui/Card/Card.astro";
+import CardImage from "../../components/ui/Card/CardImage.astro";
+import CardContent from "../../components/ui/Card/CardContent.astro";
+
+import villaAvif from "../../assets/images/portfolio/villa-marina.avif";
+import villaWebp from "../../assets/images/portfolio/villa-marina.webp";
+
+import "./portfolio.css";
 ---
 
 <section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
@@ -14,7 +20,27 @@ import "./Hero.css";
 
         <p class="hero__subtitle">PROYECTOS RECIENTES</p>
       </header>
-      <div class="portfolio__layout"></div>
+      <div class="portfolio__layout">
+        <Card>
+          <CardImage
+            image={{
+              avif: villaAvif,
+              webp: villaWebp,
+            }}
+            alt="Villa Marina frente al mar"
+          />
+
+          <CardContent>
+            <h3>Villa Marina</h3>
+
+            <p>Diseño residencial moderno con vistas al océano.</p>
+
+            <div>Arquitectura</div>
+
+            <a href="#"> Ver proyecto </a>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   </Container>
 </section>

@@ -6,32 +6,26 @@ import type { ImageSource } from "../../../types/image";
 interface Props {
   image: ImageSource;
 
+  alt: string;
+
   loading?: "lazy" | "eager";
-
-  decoding?: "async" | "sync" | "auto";
-
-  fetchPriority?: "high" | "low" | "auto";
-
-  objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
-
-  aspectRatio?: string;
-
-  class?: string;
 }
 
-const {
-  image,
-
-  loading = "lazy",
-
-  decoding = "async",
-
-  fetchPriority = "auto",
-
-  objectFit = "cover",
-
-  aspectRatio,
-
-  class: className = "",
-} = Astro.props;
+const { image, alt, loading = "lazy" } = Astro.props;
 ---
+
+<picture class="card-image">
+  <source srcset={image.avif.src} type="image/avif" />
+
+  <source srcset={image.webp.src} type="image/webp" />
+
+  <img
+    class="card-image__img"
+    src={image.webp.src}
+    alt={alt}
+    width={image.webp.width}
+    height={image.webp.height}
+    loading={loading}
+    decoding="async"
+  />
+</picture>
