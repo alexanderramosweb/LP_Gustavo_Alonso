@@ -109,17 +109,15 @@
    HERO SUBTITLE
 ========================================== */
 .hero__subtitle {
-  margin: 0;
-
   font-family: var(--font-body);
 
   font-size: var(--fs-subtitle);
   font-weight: var(--fw-regular);
 
-  line-height: var(--lh-body);
+  line-height: var(--lh-h3);
 
-  color: var(--color-text-inv-body);
-  max-width: 42.5rem;
+  color: var(--color-text-accent);
+  max-width: 800px;
 }
 
 /* ==========================================

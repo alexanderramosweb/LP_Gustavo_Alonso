@@ -8,27 +8,39 @@
 }
 
 /* ==========================================
+  PORTFOLIO CONTENT
+========================================== */
+
+.portfolio__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+/* ==========================================
    PORTFOLIO HEADING
 ========================================== */
 
 .portfolio__heading {
-  gap: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 .portfolio__title {
   font-family: var(--font-display);
 
-  font-size: var(--fs-h1);
+  font-size: var(--fs-h2);
   font-weight: var(--fw-regular);
 
-  line-height: var(--lh-h1);
+  line-height: var(--lh-h2);
 
   color: var(--color-text-title);
 }
 
-.hero__subtitle {
+.portfolio__subtitle {
   font-family: var(--font-display);
 
-  font-size: var(--fs-subtitle);
+  font-size: var(--fs-h3);
   font-weight: var(--fw-regular);
 
   line-height: var(--lh-h3);
@@ -36,10 +48,26 @@
   color: var(--color-text-accent);
 }
 /* ==========================================
-   PORTFOLIO LAYOUT
+   PORTFOLIO LAYOUT (Responsive)
 ========================================== */
+
+/* 1. Mobile (por defecto): 1 columna */
 .portfolio__layout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: var(--space-3);
+}
+
+/* 2. Tablet (768px en adelante): 2 columnas */
+@media (min-width: 768px) {
+  .portfolio__layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 3. Desktop (1024px en adelante): 3 columnas */
+@media (min-width: 1024px) {
+  .portfolio__layout {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

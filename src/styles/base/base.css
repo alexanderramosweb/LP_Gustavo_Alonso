@@ -47,7 +47,7 @@ body {
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 
-  color: var(--color-text-paragraph);
+  color: var(--color-text-body);
   background-color: var(--color-bg-main);
 
   -webkit-font-smoothing: antialiased;
