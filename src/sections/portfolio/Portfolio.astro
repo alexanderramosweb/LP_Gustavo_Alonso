@@ -1,17 +1,9 @@
 ---
 import Container from "../../components/Container/Container.astro";
-import Card from "../../components/ui/Card/Card.astro";
-import CardImage from "../../components/ui/Card/CardImage.astro";
-import CardContent from "../../components/ui/Card/CardContent.astro";
 
-import casapeninsulaAvif from "../../assets/images/portfolio/casa-peninsula.avif";
-import casapeninsulaWebp from "../../assets/images/portfolio/casa-peninsula.webp";
+import { Card, CardImage, CardContent } from "../../components/Card";
 
-import edificioprismaAvif from "../../assets/images/portfolio/edificio-prisma.avif";
-import edificioprismaWebp from "../../assets/images/portfolio/edificio-prisma.webp";
-
-import villaAvif from "../../assets/images/portfolio/villa-marina.avif";
-import villaWebp from "../../assets/images/portfolio/villa-marina.webp";
+import { portfolioImages } from "../../assets/images/portfolio";
 
 import "./portfolio.css";
 ---
@@ -30,8 +22,8 @@ import "./portfolio.css";
         <Card>
           <CardImage
             image={{
-              avif: casapeninsulaAvif,
-              webp: casapeninsulaWebp,
+              avif: portfolioImages.casaPeninsula.avif,
+              webp: portfolioImages.casaPeninsula.webp,
             }}
             alt="Villa Marina frente al mar"
           />
@@ -46,8 +38,8 @@ import "./portfolio.css";
         <Card>
           <CardImage
             image={{
-              avif: edificioprismaAvif,
-              webp: edificioprismaWebp,
+              avif: portfolioImages.edificioPrisma.avif,
+              webp: portfolioImages.edificioPrisma.webp,
             }}
             alt="Villa Marina frente al mar"
           />
@@ -62,8 +54,8 @@ import "./portfolio.css";
         <Card>
           <CardImage
             image={{
-              avif: villaAvif,
-              webp: villaWebp,
+              avif: portfolioImages.villaMarina.avif,
+              webp: portfolioImages.villaMarina.webp,
             }}
             alt="Villa Marina frente al mar"
           />

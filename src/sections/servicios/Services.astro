@@ -1,0 +1,59 @@
+---
+import Container from "../../components/Container/Container.astro";
+import { Card, CardContent, CardIcon } from "../../components/Card";
+import { servicesIcons } from "../../assets/icons/servicios/servicesIcons";
+
+import "./Services.css";
+---
+
+<section id="services" class="services" aria-labelledby="services-title">
+  <Container>
+    <div class="services__content">
+      <h2 id="services-title" class="services__title">Nuestros Servicios</h2>
+
+      <div class="services__layout">
+        <!-- Card 1: Residencial -->
+        <Card class="card-service">
+          <CardIcon class="card-service__icon">
+            <Fragment set:html={servicesIcons.residencial} />
+          </CardIcon>
+          <CardContent>
+            <h3>Residencial</h3>
+            <p>
+              Diseñamos hogares personalizados que equilibran la estética
+              vanguardista con la calidez y el confort diario.
+            </p>
+          </CardContent>
+        </Card>
+
+        <!-- Card 2: Comercial -->
+        <Card class="card-service">
+          <CardIcon class="card-service__icon">
+            <Fragment set:html={servicesIcons.comercial} />
+          </CardIcon>
+          <CardContent>
+            <h3>Comercial</h3>
+            <p>
+              Creamos espacios de trabajo y retail que potencian la identidad de
+              marca y optimizan la operatividad del negocio.
+            </p>
+          </CardContent>
+        </Card>
+
+        <!-- Card 3: Diseño de Interiores -->
+        <Card class="card-service">
+          <CardIcon class="card-service__icon">
+            <Fragment set:html={servicesIcons.interiores} />
+          </CardIcon>
+          <CardContent>
+            <h3>Diseño de Interiores</h3>
+            <p>
+              Curaduría de materiales, iluminación y mobiliario para dar el
+              toque final de sofisticación a cada rincón.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </Container>
+</section>

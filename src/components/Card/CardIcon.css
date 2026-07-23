@@ -1,0 +1,14 @@
+/* CardIcon.css */
+
+.card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* El SVG siempre debe estirarse para ocupar el 100% de la caja que le dé el padre */
+.card-icon :global(svg) {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
