@@ -1,0 +1,191 @@
+/* ==========================================
+   1. PHILOSOPHY SECTION (Base Mobile)
+========================================== */
+
+.philosophy {
+  padding-block: var(--space-20);
+  background-color: var(--color-bg-main);
+}
+
+/* ==========================================
+   2. PHILOSOPHY CONTENT & DIVIDER
+========================================== */
+
+.philosophy__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ==========================================
+   3. PHILOSOPHY HEADER
+========================================== */
+
+.philosophy__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.philosophy__subtitle {
+  color: var(--color-text-accent);
+  font-size: var(--fs-subtitle);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--lh-body);
+  text-transform: uppercase;
+}
+
+.philosophy__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-h2);
+  color: var(--color-text-title);
+}
+
+.philosophy__description {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-body);
+  margin-bottom: var(--space-6);
+}
+
+.philosophy__divider {
+  border: none;
+  height: 1px;
+  background-color: var(--color-bg-surface);
+  margin: 0 0 var(--space-6) 0;
+  width: 100%;
+}
+
+/* ==========================================
+   3. PHILOSOPHY STATS
+========================================== */
+
+.philosophy__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+}
+
+.philosophy__stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.philosophy__stat-number {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-h1);
+  color: var(--color-text-title);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.philosophy__stat-label {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-body);
+}
+
+/* ==========================================
+   4. PHILOSOPHY MEDIA & BADGE
+========================================== */
+
+.philosophy__media-wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.philosophy__media {
+  position: relative;
+  width: 100%;
+}
+
+.philosophy__author-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 130px; /* Ancho fijo para Mobile */
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-inv-title);
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.philosophy__author-firstname,
+.philosophy__author-lastname {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* ==========================================
+   5. PHILOSOPHY LAYOUT (Responsive)
+========================================== */
+
+/* 1. Mobile (por defecto): 1 columna */
+.philosophy__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.philosophy__stats {
+  padding-bottom: var(--space-4);
+}
+
+/* 2. Tablet (768px en adelante) */
+@media (min-width: 768px) {
+  .philosophy__layout {
+    gap: var(--space-8);
+  }
+
+  .philosophy__stats {
+    gap: var(--space-8);
+  }
+
+  .philosophy__author-badge {
+    width: 150px; /* Crece un poco en tablet */
+  }
+}
+
+/* 3. Desktop (1024px en adelante): 2 columnas */
+@media (min-width: 1024px) {
+  .philosophy__layout {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-12);
+  }
+  /* Margen inferior para dar espacio a la parte del badge que se sale por abajo */
+  .philosophy__media-wrapper {
+    margin-bottom: var(--space-8);
+  }
+
+  /* Espacio en el contenedor para que la caja respire al salirse */
+  .philosophy__media-wrapper {
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Desplaza la caja 35% hacia la derecha y 35% hacia abajo fuera de la foto */
+  .philosophy__author-badge {
+    transform: translate(35%, 35%);
+  }
+}

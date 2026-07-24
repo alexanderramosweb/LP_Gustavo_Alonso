@@ -1,0 +1,64 @@
+---
+import Container from "../../components/Container/Container.astro";
+import ResponsiveImage from "../../components/ResponsiveImage/ResponsiveImage.astro";
+import { philosophyImages } from "../../assets/images/philosophy";
+
+import "./Philosophy.css";
+---
+
+<section id="philosophy" class="philosophy" aria-labelledby="philosophy-title">
+  <Container>
+    <div class="philosophy__layout">
+      <!-- Columna Izquierda: Contenido -->
+      <div class="philosophy__content">
+        <header class="philosophy__header">
+          <p class="philosophy__subtitle">FILOSOFÍA</p>
+
+          <h2 id="philosophy-title" class="philosophy__title">
+            Diseño con alma y precisión técnica
+          </h2>
+        </header>
+
+        <p class="philosophy__description">
+          Entiendo la arquitectura como el diálogo entre la luz, la materia y el
+          ser humano. Cada línea trazada en mis diseños busca no solo cumplir
+          una función, sino elevar la experiencia de quienes habitan el espacio.
+        </p>
+
+        <hr class="philosophy__divider" aria-hidden="true" />
+
+        <!-- Datos directos como en Portfolio -->
+        <dl class="philosophy__stats">
+          <div class="philosophy__stat">
+            <dd class="philosophy__stat-number">15+</dd>
+            <dt class="philosophy__stat-label">AÑOS DE EXPERIENCIA</dt>
+          </div>
+
+          <div class="philosophy__stat">
+            <dd class="philosophy__stat-number">80+</dd>
+            <dt class="philosophy__stat-label">PROYECTOS CREADOS</dt>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Columna Derecha: Imagen llamada desde el import -->
+      <figure class="philosophy__media-wrapper">
+        <div class="philosophy__media">
+          <ResponsiveImage
+            image={{
+              avif: philosophyImages.gustavo.avif,
+              webp: philosophyImages.gustavo.webp,
+            }}
+            alt="Retrato profesional de Sergio Mendoza"
+            className="responsive-image--square"
+          />
+
+          <figcaption class="philosophy__author-badge">
+            <span class="philosophy__author-firstname">SERGIO</span>
+            <span class="philosophy__author-lastname">MENDOZA</span>
+          </figcaption>
+        </div>
+      </figure>
+    </div>
+  </Container>
+</section>

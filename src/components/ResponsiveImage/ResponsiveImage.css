@@ -1,0 +1,35 @@
+/* Estructura Base */
+.responsive-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.responsive-image__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 
+  Clases utilitarias de Aspect Ratio para adaptar 
+  el componente a cualquier sección sin tocar el .astro
+*/
+.responsive-image--square {
+  aspect-ratio: 1 / 1;
+}
+
+.responsive-image--landscape {
+  aspect-ratio: 16 / 9;
+}
+
+.responsive-image--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.responsive-image--wide {
+  aspect-ratio: 21 / 9;
+}
