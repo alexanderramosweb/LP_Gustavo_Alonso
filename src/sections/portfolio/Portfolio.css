@@ -55,7 +55,7 @@
 .portfolio__layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-3);
+  gap: var(--space-6);
 }
 
 /* 2. Tablet (768px en adelante): 2 columnas */

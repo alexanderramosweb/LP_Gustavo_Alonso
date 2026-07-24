@@ -39,7 +39,7 @@
 .card-service {
   background-color: transparent;
   border: 1px solid #d3d2cb;
-  padding: var(--space-8);
+  padding: var(--space-6);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,16 +54,10 @@
 
 /* 100% BEM: Clase de un solo nivel sin selecciones compuestas */
 .card-service__icon {
-  width: 32px;
-  height: 32px;
-  margin-bottom: var(--space-6);
+  width: 24px;
+  height: 24px;
+  margin-bottom: var(--space-2);
   color: var(--color-text-title);
-  transition: color 0.3s ease;
-}
-
-/* Hover limpio en BEM */
-.card-service:hover .card-service__icon {
-  color: #0066cc;
 }
 
 /* El SVG hereda las reglas */
@@ -98,7 +92,7 @@
 .services__layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
 /* 2. Tablet (768px en adelante): 2 columnas */
@@ -106,11 +100,31 @@
   .services__layout {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .card-service {
+    padding: var(--space-8);
+  }
+
+  .card-service__icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: var(--space-4);
+  }
 }
 
 /* 3. Desktop (1024px en adelante): 3 columnas */
 @media (min-width: 1024px) {
   .services__layout {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .card-service__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-6);
+  }
+
+  /* Texto centrado en ordenador */
+  .card-service p {
+    text-align: center;
   }
 }
