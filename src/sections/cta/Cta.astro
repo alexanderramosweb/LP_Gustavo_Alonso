@@ -1,0 +1,36 @@
+---
+import Container from "../../components/Container/Container.astro";
+
+import Button from "../../components/Button/Button.astro";
+
+import WhatsAppIcon from "../../assets/icons/icon_brand-whatsapp.svg";
+
+import "./Cta.css";
+---
+
+<section class="cta">
+  <!-- Elementos decorativos (Círculos) -->
+  <div class="cta__circle cta__circle--top-right"></div>
+  <div class="cta__circle cta__circle--bottom-left"></div>
+  <Container>
+    <!-- Contenido principal -->
+    <div class="cta__layout">
+      <h2 class="cta__title">Hablemos de tu próximo proyecto</h2>
+
+      <p class="cta__description">
+        ¿Tienes una idea en mente? Convirtámosla en una realidad tangible y
+        extraordinaria. Agenda una consultoría inicial sin costo.
+      </p>
+
+      <div class="cta__button">
+        <Button
+          variant="primary"
+          href="https://wa.me/573000000000"
+          target="_blank"
+        >
+          <WhatsAppIcon slot="icon-left" /> AGENDAR POR WHATSAPP
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>

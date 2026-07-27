@@ -62,6 +62,7 @@
 @media (min-width: 768px) {
   .portfolio__layout {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
   }
 }
 

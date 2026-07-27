@@ -5,6 +5,8 @@ import Hero from "../sections/hero/Hero.astro";
 import Portfolio from "../sections/portfolio/Portfolio.astro";
 import Services from "../sections/servicios/Services.astro";
 import Philosophy from "../sections/philosophy/Philosophy.astro";
+import Cta from "../sections/cta/Cta.astro";
+import Footer from "../components/Footer/Footer.astro";
 
 // Buena práctica: Si creas tu footer como un componente separado, lo importas aquí
 // import Footer from "../components/Footer.astro";
@@ -24,9 +26,7 @@ const { title, description } = Astro.props;
     <Portfolio />
     <Services />
     <Philosophy />
-
-    <footer>
-      <p>&copy; 2026 Gustavo Alonso. Todos los derechos reservados.</p>
-    </footer>
+    <Cta />
   </main>
+  <Footer />
 </BaseLayout>

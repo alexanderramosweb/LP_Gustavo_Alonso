@@ -1,0 +1,60 @@
+---
+import Container from "../Container/Container.astro";
+import IconBrand from "../../assets/icons/icon_brand.svg";
+import "./Footer.css";
+
+// 1. Obtenemos el año actual en el servidor
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer" role="contentinfo">
+  <Container>
+    <div class="footer__layout">
+      <!-- Columna Izquierda: Brand & Slogan -->
+      <div class="footer__brand">
+        <a href="/" class="footer__logo-link" aria-label="Ir al inicio">
+          <IconBrand />
+          <span class="footer__logo-text">SERGIO MENDOZA</span>
+        </a>
+        <p class="footer__tagline">Arquitectura que define identidades.</p>
+      </div>
+
+      <!-- Columna Derecha: Enlaces de Contacto -->
+      <nav class="footer__nav" aria-label="Enlaces de contacto">
+        <h3 class="footer__nav-title">CONTACTO</h3>
+        <ul class="footer__links" role="list">
+          <li>
+            <a
+              href="mailto:contacto@sergiomendoza.com"
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              EMAIL
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/573000000000"
+              class="footer__link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WHATSAPP
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <hr class="footer__divider" aria-hidden="true" />
+
+    <!-- Copyright Inferior -->
+    <div class="footer__bottom">
+      {/* 2. Inyectamos la variable directamente */}
+      <p class="footer__copyright">
+        © {currentYear} SERGIO MENDOZA. ALL RIGHTS RESERVED.
+      </p>
+    </div>
+  </Container>
+</footer>
