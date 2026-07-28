@@ -3,17 +3,17 @@ import "./Card.css";
 
 interface Props {
   as?: "article" | "div" | "section";
-
+  variant?: "portfolio" | "service" | "default";
   class?: string;
 }
 
 const {
   as: Tag = "article",
-
+  variant = "default",
   class: className = "",
 } = Astro.props;
 ---
 
-<Tag class:list={["card", className]}>
+<Tag class:list={["card", `card--${variant}`, className]}>
   <slot />
 </Tag>
