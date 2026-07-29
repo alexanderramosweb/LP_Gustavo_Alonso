@@ -1,64 +1,102 @@
 /* ==========================================
-  PORTFOLIO SECTION
+   1. ESTILOS BASE DE LA SECCIÓN Y COMPONENTES
 ========================================== */
 
+/* Contenedor principal de Portfolio */
 .portfolio {
   padding-block: var(--space-20);
   background-color: var(--color-border-light);
 }
 
-/* ==========================================
-  PORTFOLIO CONTENT
-========================================== */
-
+/* Envoltorio del contenido */
 .portfolio__content {
   display: flex;
   flex-direction: column;
   gap: var(--space-10);
 }
 
-/* ==========================================
-   PORTFOLIO HEADING
-========================================== */
-
+/* Encabezado (Títulos y subtítulos) */
 .portfolio__heading {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
+
 .portfolio__title {
   font-family: var(--font-display);
-
   font-size: var(--fs-h2);
   font-weight: var(--fw-regular);
-
   line-height: var(--lh-h2);
-
   color: var(--color-text-title);
 }
 
 .portfolio__subtitle {
   font-family: var(--font-display);
-
   font-size: var(--fs-h3);
   font-weight: var(--fw-regular);
-
   line-height: var(--lh-h3);
-
   color: var(--color-text-accent);
 }
-/* ==========================================
-   PORTFOLIO LAYOUT (Responsive)
-========================================== */
 
-/* 1. Mobile (por defecto): 1 columna */
+/* Grilla base de tarjetas (Mobile First: 1 Columna) */
 .portfolio__layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
 }
 
-/* 2. Tablet (768px en adelante): 2 columnas */
+/* ==========================================
+   2. MICROINTERACCIONES (Transiciones & Hover)
+========================================== */
+
+/* Declaración de transiciones suaves */
+.card--portfolio {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card--portfolio .card-image img {
+  transition:
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.4s ease;
+}
+
+.card--portfolio .card-content {
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease;
+}
+
+/* Estado Hover y Focus (Interacción de entrada) */
+.card--portfolio:hover,
+.card--portfolio:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.card--portfolio:hover .card-image img,
+.card--portfolio:focus-within .card-image img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+.card--portfolio:hover .card-content,
+.card--portfolio:focus-within .card-content {
+  transform: translateY(-2px);
+}
+
+/* Estado Active (Feedback táctil / Click) */
+.card--portfolio:active {
+  transform: translateY(-2px) scale(0.99);
+  transition-duration: 0.1s;
+}
+
+/* ==========================================
+   3. RESPONSIVE DESIGN & ACCESIBILIDAD
+========================================== */
+
+/* Tablet (768px en adelante): 2 columnas */
 @media (min-width: 768px) {
   .portfolio__layout {
     grid-template-columns: repeat(2, 1fr);
@@ -66,9 +104,24 @@
   }
 }
 
-/* 3. Desktop (1024px en adelante): 3 columnas */
+/* Desktop (1024px en adelante): 3 columnas */
 @media (min-width: 1024px) {
   .portfolio__layout {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Reducción de movimiento (Preferencias de usuario) */
+@media (prefers-reduced-motion: reduce) {
+  .card--portfolio,
+  .card--portfolio .card-image img,
+  .card--portfolio .card-content {
+    transition: none;
+  }
+
+  .card--portfolio:hover,
+  .card--portfolio:hover .card-image img,
+  .card--portfolio:hover .card-content {
+    transform: none;
   }
 }
