@@ -44,14 +44,16 @@ import "./Philosophy.css";
       <!-- Columna Derecha: Imagen llamada desde el import -->
       <figure class="philosophy__media-wrapper">
         <div class="philosophy__media">
-          <ResponsiveImage
-            image={{
-              avif: philosophyImages.gustavo.avif,
-              webp: philosophyImages.gustavo.webp,
-            }}
-            alt="Retrato profesional de Sergio Mendoza"
-            className="responsive-image--square"
-          />
+          <div class="philosophy__image-container">
+            <ResponsiveImage
+              image={{
+                avif: philosophyImages.gustavo.avif,
+                webp: philosophyImages.gustavo.webp,
+              }}
+              alt="Retrato profesional de Sergio Mendoza"
+              className="philosophy__image"
+            />
+          </div>
 
           <figcaption class="philosophy__author-badge">
             <span class="philosophy__author-firstname">GUSTAVO</span>

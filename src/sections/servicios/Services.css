@@ -1,41 +1,38 @@
 /* ==========================================
- SERVICES SECTION
+   1. ESTILOS BASE DE LA SECCIÓN Y COMPONENTES
 ========================================== */
+
+/* Contenedor principal de Servicios */
 .services {
   background-color: var(--color-bg-surface);
   padding-block: var(--space-20);
-
   text-align: center;
 }
 
-/* ==========================================
- SERVICES CONTENT
-========================================== */
-
+/* Envoltorio del contenido */
 .services__content {
   display: flex;
   flex-direction: column;
   gap: var(--space-10);
 }
 
-/* ==========================================
-  SERVICES TITLE
-========================================== */
-
+/* Título de la sección */
 .services__title {
   font-family: var(--font-display);
-
   font-size: var(--fs-h2);
   font-weight: var(--fw-regular);
-
   line-height: var(--lh-h2);
   color: var(--color-text-accent);
 }
 
-/* ==========================================
- CARD STYLE
-========================================== */
+/* Grilla base de tarjetas (Mobile First: 1 Columna) */
+.services__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
 
+/* Estilo Base de Tarjeta de Servicio */
 .card-service {
   background-color: transparent;
   border: 1px solid #d3d2cb;
@@ -46,28 +43,29 @@
   text-align: center;
   border-radius: var(--radius-none);
   gap: var(--space-3);
+  position: relative;
 }
 
-/* ==========================================
-   ICONOS (Específico para esta tarjeta)
-========================================== */
-
-/* 100% BEM: Clase de un solo nivel sin selecciones compuestas */
+/* Iconos (Específico para esta tarjeta) */
 .card-service__icon {
   width: 24px;
   height: 24px;
   margin-bottom: var(--space-2);
   color: var(--color-text-title);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* El SVG hereda las reglas */
 .card-service__icon :global(svg) {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
+  width: 100%;
+  height: 100%;
 }
 
-/* Título de la Tarjeta */
+/* Typography interna de tarjeta */
 .card-service h3 {
   font-family: var(--font-display);
   font-size: var(--fs-h3);
@@ -75,7 +73,6 @@
   color: var(--color-text-title);
 }
 
-/* Párrafo de la Tarjeta */
 .card-service p {
   font-family: var(--font-body);
   font-weight: var(--fw-regular);
@@ -85,17 +82,61 @@
 }
 
 /* ==========================================
-   SERVICES LAYOUT (Responsive)
+   2. MICROINTERACCIONES (Transiciones & Hover)
 ========================================== */
 
-/* 1. Mobile (por defecto): 1 columna */
-.services__layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
+/* Declaración de transiciones suaves */
+.card-service {
+  will-change: transform, box-shadow, border-color;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
-/* 2. Tablet (768px en adelante): 2 columnas */
+.card-service__icon {
+  will-change: transform, color;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.3s ease;
+}
+
+.card-service h3 {
+  transition: color 0.3s ease;
+}
+
+/* Estado Hover y Focus-Within (Interacción de entrada) */
+.card-service:hover,
+.card-service:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--color-text-accent, #a39382);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+.card-service:hover .card-service__icon,
+.card-service:focus-within .card-service__icon {
+  transform: translateY(-2px) scale(1.08);
+  color: var(--color-text-accent);
+}
+
+.card-service:hover h3,
+.card-service:focus-within h3 {
+  color: var(--color-text-accent);
+}
+
+/* Estado Active (Feedback táctil / Click) */
+.card-service:active {
+  transform: translateY(-1px) scale(0.995);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition-duration: 0.1s;
+}
+
+/* ==========================================
+   3. RESPONSIVE DESIGN & ACCESIBILIDAD
+========================================== */
+
+/* Tablet (768px en adelante): 2 columnas */
 @media (min-width: 768px) {
   .services__layout {
     grid-template-columns: repeat(2, 1fr);
@@ -112,19 +153,40 @@
   }
 }
 
-/* 3. Desktop (1024px en adelante): 3 columnas */
+/* Desktop (1024px en adelante): 3 columnas */
 @media (min-width: 1024px) {
   .services__layout {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .card-service__icon {
     width: 32px;
     height: 32px;
     margin-bottom: var(--space-6);
   }
 
-  /* Texto centrado en ordenador */
   .card-service p {
     text-align: center;
+  }
+}
+
+/* Reducción de movimiento (Preferencias de usuario) */
+@media (prefers-reduced-motion: reduce) {
+  .card-service,
+  .card-service__icon,
+  .card-service h3 {
+    transition: none;
+  }
+
+  .card-service:hover,
+  .card-service:focus-within,
+  .card-service:active {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .card-service:hover .card-service__icon,
+  .card-service:focus-within .card-service__icon {
+    transform: none;
   }
 }
