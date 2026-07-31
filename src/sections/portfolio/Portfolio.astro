@@ -8,10 +8,15 @@ import { portfolioImages } from "../../assets/images/portfolio";
 import "./portfolio.css";
 ---
 
-<section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
+<section
+  id="portfolio"
+  class="portfolio"
+  aria-labelledby="portfolio-title"
+  data-animate="portfolio-section"
+>
   <Container>
     <div class="portfolio__content">
-      <header class="portfolio__heading">
+      <header class="portfolio__heading" data-animate="portfolio-header">
         <h2 id="portfolio-title" class="portfolio__title">
           Selección de Obras
         </h2>
@@ -19,7 +24,7 @@ import "./portfolio.css";
         <p class="hero__subtitle">PROYECTOS RECIENTES</p>
       </header>
       <div class="portfolio__layout">
-        <Card variant="portfolio">
+        <Card variant="portfolio" data-animate="portfolio-card">
           <CardImage
             image={{
               avif: portfolioImages.casaPeninsula.avif,
@@ -35,7 +40,7 @@ import "./portfolio.css";
           </CardContent>
         </Card>
 
-        <Card variant="portfolio">
+        <Card variant="portfolio" data-animate="portfolio-card">
           <CardImage
             image={{
               avif: portfolioImages.edificioPrisma.avif,
@@ -51,7 +56,7 @@ import "./portfolio.css";
           </CardContent>
         </Card>
 
-        <Card variant="portfolio">
+        <Card variant="portfolio" data-animate="portfolio-card">
           <CardImage
             image={{
               avif: portfolioImages.villaMarina.avif,

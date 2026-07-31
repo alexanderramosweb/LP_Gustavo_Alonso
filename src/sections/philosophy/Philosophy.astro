@@ -6,12 +6,17 @@ import { philosophyImages } from "../../assets/images/philosophy";
 import "./Philosophy.css";
 ---
 
-<section id="philosophy" class="philosophy" aria-labelledby="philosophy-title">
+<section
+  id="philosophy"
+  class="philosophy"
+  aria-labelledby="philosophy-title"
+  data-animate="philosophy-section"
+>
   <Container>
     <div class="philosophy__layout">
       <!-- Columna Izquierda: Contenido -->
       <div class="philosophy__content">
-        <header class="philosophy__header">
+        <header class="philosophy__header" data-animate="philosophy-header">
           <p class="philosophy__subtitle">FILOSOFÍA</p>
 
           <h2 id="philosophy-title" class="philosophy__title">
@@ -19,30 +24,48 @@ import "./Philosophy.css";
           </h2>
         </header>
 
-        <p class="philosophy__description">
+        <p class="philosophy__description" data-animate="philosophy-text">
           Entiendo la arquitectura como el diálogo entre la luz, la materia y el
           ser humano. Cada línea trazada en mis diseños busca no solo cumplir
           una función, sino elevar la experiencia de quienes habitan el espacio.
         </p>
 
-        <hr class="philosophy__divider" aria-hidden="true" />
+        <hr
+          class="philosophy__divider"
+          aria-hidden="true"
+          data-animate="philosophy-divider"
+        />
 
         <!-- Datos directos como en Portfolio -->
-        <dl class="philosophy__stats">
+        <dl class="philosophy__stats" data-animate="philosophy-stats">
           <div class="philosophy__stat">
-            <dd class="philosophy__stat-number">15+</dd>
+            <dd
+              class="philosophy__stat-number"
+              data-animate="counter"
+              data-target="15"
+              data-suffix="+"
+            >
+              0+
+            </dd>
             <dt class="philosophy__stat-label">AÑOS DE EXPERIENCIA</dt>
           </div>
 
           <div class="philosophy__stat">
-            <dd class="philosophy__stat-number">80+</dd>
+            <dd
+              class="philosophy__stat-number"
+              data-animate="counter"
+              data-target="80"
+              data-suffix="+"
+            >
+              0+
+            </dd>
             <dt class="philosophy__stat-label">PROYECTOS CREADOS</dt>
           </div>
         </dl>
       </div>
 
       <!-- Columna Derecha: Imagen llamada desde el import -->
-      <figure class="philosophy__media-wrapper">
+      <figure class="philosophy__media-wrapper" data-animate="philosophy-media">
         <div class="philosophy__media">
           <div class="philosophy__image-container">
             <ResponsiveImage
@@ -55,7 +78,10 @@ import "./Philosophy.css";
             />
           </div>
 
-          <figcaption class="philosophy__author-badge">
+          <figcaption
+            class="philosophy__author-badge"
+            data-animate="philosophy-badge"
+          >
             <span class="philosophy__author-firstname">GUSTAVO</span>
             <span class="philosophy__author-lastname">ALONSO</span>
           </figcaption>

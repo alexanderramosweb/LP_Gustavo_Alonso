@@ -30,3 +30,11 @@ const { title, description } = Astro.props;
   </main>
   <Footer />
 </BaseLayout>
+<!-- Script desacoplado para inicializar las animaciones de GSAP en el cliente -->
+<script>
+  import { initAnimations } from "../animations";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initAnimations();
+  });
+</script>

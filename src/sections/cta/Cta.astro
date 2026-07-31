@@ -8,21 +8,25 @@ import WhatsAppIcon from "../../assets/icons/icon_brand-whatsapp.svg";
 import "./Cta.css";
 ---
 
-<section class="cta">
+<section class="cta" data-animate="cta-section">
   <!-- Elementos decorativos (Círculos) -->
-  <div class="cta__circle cta__circle--top-right"></div>
-  <div class="cta__circle cta__circle--bottom-left"></div>
+  <div class="cta__circle cta__circle--top-right" data-animate="cta-circle">
+  </div>
+  <div class="cta__circle cta__circle--bottom-left" data-animate="cta-circle">
+  </div>
   <Container>
     <!-- Contenido principal -->
     <div class="cta__layout">
-      <h2 class="cta__title">Hablemos de tu próximo proyecto</h2>
+      <h2 class="cta__title" data-animate="cta-title">
+        Hablemos de tu próximo proyecto
+      </h2>
 
-      <p class="cta__description">
+      <p class="cta__description" data-animate="cta-description">
         ¿Tienes una idea en mente? Convirtámosla en una realidad tangible y
         extraordinaria. Agenda una consultoría inicial sin costo.
       </p>
 
-      <div class="cta__button">
+      <div class="cta__button" data-animate="cta-button">
         <Button
           variant="primary"
           href="https://wa.me/573000000000"

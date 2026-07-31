@@ -14,7 +14,12 @@ import WhatsAppIcon from "../../assets/icons/icon_brand-whatsapp.svg";
 import "./Hero.css";
 ---
 
-<section id="hero" class="hero" aria-labelledby="hero-title">
+<section
+  id="hero"
+  class="hero"
+  aria-labelledby="hero-title"
+  data-animate="hero-section"
+>
   <div class="hero__media" aria-hidden="true">
     <picture>
       <source
@@ -53,21 +58,22 @@ import "./Hero.css";
     </picture>
   </div>
 
-  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__overlay" aria-hidden="true" data-animate="hero-overlay">
+  </div>
 
   <Container>
     <div class="hero__content">
       <header class="hero__heading">
-        <h1 id="hero-title" class="hero__title">
+        <h1 id="hero-title" class="hero__title" data-animate="hero-title">
           Arquitectura moderna para quienes valoran cada detalle
         </h1>
 
-        <p class="hero__subtitle">
+        <p class="hero__subtitle" data-animate="hero-subtitle">
           Convertimos tus ideas en espacios modernos, funcionales y atemporales,
           pensados para reflejar tu estilo de vida y crecer contigo.
         </p>
 
-        <div class="hero__cta">
+        <div class="hero__cta" data-animate="hero-cta">
           <Button
             variant="primary"
             href="https://wa.me/573000000000"
